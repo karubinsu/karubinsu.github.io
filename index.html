@@ -86,7 +86,12 @@
   .index-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
     font-size: 15px;
+  }
+
+  .index-table col.col-status {
+    width: 108px;
   }
 
   .index-table thead th {
@@ -128,7 +133,6 @@
     color: var(--muted);
     font-size: 14px;
     margin-top: 4px;
-    max-width: 42ch;
   }
 
   .status {
@@ -136,6 +140,7 @@
     font-size: 12px;
     white-space: nowrap;
     color: var(--muted);
+    padding-left: 16px;
   }
 
   .status.live { color: #3f6b3f; }
@@ -195,6 +200,10 @@
     </header>
 
     <table class="index-table">
+      <colgroup>
+        <col class="col-project">
+        <col class="col-status">
+      </colgroup>
       <thead>
         <tr>
           <th data-es="proyecto" data-en="project">proyecto</th>
@@ -228,9 +237,9 @@
           <td>
             <div class="proj-name"><a href="#">Mame's Cocina</a></div>
             <div class="proj-desc"
-                 data-es="Documentando las recetas, técnicas e historias culinarias de mi Mame, para que ese conocimiento no se pierda."
-                 data-en="Documenting my Mame's recipes, techniques, and culinary stories, so that knowledge doesn't get lost.">
-              Documentando las recetas, técnicas e historias culinarias de mi Mame, para que ese conocimiento no se pierda.
+                 data-es="Para que cualquiera, hasta quien nunca ha cocinado, pueda preparar la comida de mi Mame tal como ella la hace — y probarla incluso cuando ella no está para enseñarle."
+                 data-en="So that anyone — even a total beginner — can cook my Mame's food the way she makes it, and taste it even when she's not there to teach them.">
+              Para que cualquiera, hasta quien nunca ha cocinado, pueda preparar la comida de mi Mame tal como ella la hace — y probarla incluso cuando ella no está para enseñarle.
             </div>
           </td>
           <td class="status" data-es="próximamente" data-en="coming soon">próximamente</td>
