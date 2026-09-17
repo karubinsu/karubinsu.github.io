@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vince — Índice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b2430;
+    --paper: #faf9f6;
+    --line: #d8d4cb;
+    --accent: #c9a227;
+    --muted: #6b6f76;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .top-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+
+  #lang-toggle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #lang-toggle:hover {
+    border-color: var(--accent);
+  }
+
+  header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  header p {
+    max-width: 52ch;
+    color: var(--muted);
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  .index-table thead th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .index-table tbody td {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  .index-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .proj-name {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .proj-name a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .proj-name a:hover {
+    color: var(--accent);
+  }
+
+  .proj-desc {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+    max-width: 42ch;
+  }
+
+  .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    white-space: nowrap;
+    color: var(--muted);
+  }
+
+  .status.live { color: #3f6b3f; }
+
+  footer {
+    margin-top: 56px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a {
+    color: var(--ink);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social-links a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .social-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 36px 18px 64px; }
+    h1 { font-size: 27px; }
+    .index-table thead { display: none; }
+    .index-table tbody tr { display: block; padding: 14px 0; }
+    .index-table tbody td { display: block; border: none; padding: 2px 0; }
+    .status { margin-top: 6px; display: inline-block; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-row">
+      <button id="lang-toggle" aria-label="Switch language" type="button">
+        <span id="lang-flag">🇬🇧</span>
+        <span id="lang-code">EN</span>
+      </button>
+    </div>
+
+    <header>
+      <p class="kicker">índice</p>
+      <h1 data-es="Vince — Proyectos" data-en="Vince — Projects">Vince — Proyectos</h1>
+      <p data-es="Una lista de las cosas que he construido. Se actualiza a medida que voy lanzando más."
+         data-en="A running list of things I've built. Updated as I ship more.">
+        Una lista de las cosas que he construido. Se actualiza a medida que voy lanzando más.
+      </p>
+    </header>
+
+    <table class="index-table">
+      <thead>
+        <tr>
+          <th data-es="proyecto" data-en="project">proyecto</th>
+          <th data-es="estado" data-en="status">estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="proj-name"><a href="#">Tandem</a></div>
+            <div class="proj-desc"
+                 data-es="Una app de traducción para conversaciones en lenguaje natural, pensada para hablar con otra persona en tiempo real sin cambiar de idioma."
+                 data-en="A translation app for natural-language conversations, built for talking to someone in real time without switching languages.">
+              Una app de traducción para conversaciones en lenguaje natural, pensada para hablar con otra persona en tiempo real sin cambiar de idioma.
+            </div>
+          </td>
+          <td class="status" data-es="próximamente" data-en="coming soon">próximamente</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name"><a href="#">ES-A1 Zona de Repaso</a></div>
+            <div class="proj-desc"
+                 data-es="Repasador de vocabulario personalizado, capítulo por capítulo, del libro Aula Internacional Plus A1: tarjetas adaptadas al orden de cada unidad, con seguimiento de progreso."
+                 data-en="A personalized, chapter-by-chapter vocabulary reviewer for Aula Internacional Plus A1 — flashcards matched to each unit's order, with progress tracking.">
+              Repasador de vocabulario personalizado, capítulo por capítulo, del libro Aula Internacional Plus A1: tarjetas adaptadas al orden de cada unidad, con seguimiento de progreso.
+            </div>
+          </td>
+          <td class="status" data-es="próximamente" data-en="coming soon">próximamente</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name"><a href="#">Mame's Cocina</a></div>
+            <div class="proj-desc"
+                 data-es="Documentando las recetas, técnicas e historias culinarias de mi Mame, para que ese conocimiento no se pierda."
+                 data-en="Documenting my Mame's recipes, techniques, and culinary stories, so that knowledge doesn't get lost.">
+              Documentando las recetas, técnicas e historias culinarias de mi Mame, para que ese conocimiento no se pierda.
+            </div>
+          </td>
+          <td class="status" data-es="próximamente" data-en="coming soon">próximamente</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name"><a href="#">Proyecto</a></div>
+            <div class="proj-desc"
+                 data-es="Descripción breve del proyecto."
+                 data-en="Short description of the project.">
+              Descripción breve del proyecto.
+            </div>
+          </td>
+          <td class="status" data-es="próximamente" data-en="coming soon">próximamente</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://instagr.am/karlvxx" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://fb.me/karlvince05" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('lang-toggle');
+    const flag = document.getElementById('lang-flag');
+    const code = document.getElementById('lang-code');
+    const html = document.documentElement;
+
+    function applyLang(lang) {
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang);
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        el.textContent = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+      });
+      if (lang === 'es') {
+        flag.textContent = '🇬🇧';
+        code.textContent = 'EN';
+      } else {
+        flag.textContent = '🇪🇸';
+        code.textContent = 'ES';
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-lang');
+      applyLang(current === 'es' ? 'en' : 'es');
+    });
+
+    applyLang('es');
+  </script>
+</body>
+</html>
